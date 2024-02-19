@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Nunito, Fredoka } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
+const nunito = Nunito({ subsets: ["latin"] });
+const fredoka = Fredoka({ subsets: ["latin"], weight: ['300','400','500','700'], variable : '--font-fredoka'});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={fredoka.variable}>{children}</body>
     </html>
   );
 }
