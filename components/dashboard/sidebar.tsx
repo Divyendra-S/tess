@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import pitch from "@/public/pitch...png";
 
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
@@ -18,7 +19,10 @@ import {
   UsersRound,
   FolderPlus,
   CircleUserRound,
+  Trash
 } from "lucide-react";
+import { Button } from "../ui/button";
+import Image from "next/image";
 
 const Sidebar = () => {
   const [value, setValue] = useState(0);
@@ -91,10 +95,13 @@ const Sidebar = () => {
               <li
                 key={i}
                 onClick={() => handleItemClick(item.id)}
-                className={cn(" items-center p-2 h-[32px] rounded-md  flex gap-x-2", {
-                  " bg-zinc-200": value === item.id,
-                  "hover:bg-zinc-100": value !== item.id,
-                })}
+                className={cn(
+                  " items-center p-2 h-[32px] rounded-md  flex gap-x-2 mb-[2px]",
+                  {
+                    " bg-zinc-200": value === item.id,
+                    "hover:bg-zinc-100": value !== item.id,
+                  }
+                )}
               >
                 {item.logo}
                 {item.name}
@@ -105,44 +112,57 @@ const Sidebar = () => {
                 className="flex items-center  w-full  hover:bg-gray-200 focus:outline-none gap-x-1 p-2 rounded-md"
                 onClick={toggleMenu}
               >
-                
-                <ChevronDown className={`h-5 w-5 transition duration-300 ${isOpen ? '' : 'rotate-counterclockwise-90'}`} />
-                <UsersRound size={17}/>
+                <ChevronDown
+                  className={`h-5 w-5 transition duration-300 ${
+                    isOpen ? "" : "rotate-counterclockwise-90"
+                  }`}
+                />
+                <UsersRound size={17} />
                 <span>Team</span>
               </button>
               {isOpen && (
-                <ul className={`ml-4 pl-8 mt-1 space-y-2 ${isOpen ? 'dropdown-animation' : ''}`} style={{ maxHeight: isOpen ? '100px' : '0' }}>
+                <ul
+                  className={`ml-4 pl-8 mt-1 space-y-2 ${
+                    isOpen ? "dropdown-animation" : ""
+                  }`}
+                  style={{ maxHeight: isOpen ? "100px" : "0" }}
+                >
                   <li className=" text-gray-400 flex">
                     <Link className="flex gap-x-1" href="/page1">
-                      <FolderPlus size={19}/>
+                      <FolderPlus size={19} />
                       <div className=" text-gray-400">Create folder</div>
                     </Link>
                   </li>
-                  
                 </ul>
               )}
             </li>
-
 
             <li className=" mt-3">
               <button
                 className="flex items-center  w-full  hover:bg-gray-200 focus:outline-none gap-x-1 p-2 rounded-md"
                 onClick={toggleClose}
               >
-                
-                <ChevronDown className={`h-5 w-5 transition duration-300 ${isClose ? '' : 'rotate-counterclockwise-90'}`} />
-                <CircleUserRound size={19}/>
+                <ChevronDown
+                  className={`h-5 w-5 transition duration-300 ${
+                    isClose ? "" : "rotate-counterclockwise-90"
+                  }`}
+                />
+                <CircleUserRound size={19} />
                 <span>Personal</span>
               </button>
               {isClose && (
-                <ul className={`ml-4 pl-8 mt-1 space-y-2 ${isClose ? 'dropdown-animation' : ''}`} style={{ maxHeight: isClose ? '100px' : '0' }}>
+                <ul
+                  className={`ml-4 pl-8 mt-1 space-y-2 ${
+                    isClose ? "dropdown-animation" : ""
+                  }`}
+                  style={{ maxHeight: isClose ? "100px" : "0" }}
+                >
                   <li className=" text-gray-400 flex">
                     <Link className="flex gap-x-1" href="/page1">
-                      <FolderPlus size={19}/>
+                      <FolderPlus size={19} />
                       <div className=" text-gray-400">Create folder</div>
                     </Link>
                   </li>
-                  
                 </ul>
               )}
             </li>
@@ -150,14 +170,42 @@ const Sidebar = () => {
         </section>
         {/* second section */}
         <section>
+          <div className=" m-3 flex flex-col border rounded-md p-3 relative shadow-md">
+            <div className=" flex text-sm gap-2 font-semibold text-black  mb-[6px]">
+              <GanttChartSquare size={20} />
+              Team library
+            </div>
+            <p className=" text-sm  text-[#3F4250] font-normal">
+              {" "}
+              Create branded templates <br />
+              Upload custom fonts,images <br />
+              And video
+            </p>
+            <button className="w-[64px] bg-[#6B53FF] px-[12px] mt-3 py-[6px] rounded-lg text-white  text-sm">
+              Set up
+            </button>
+            <div className=" absolute -z-10 right-0 bottom-0">
+              <Image
+                src={pitch}
+                width={128}
+                height={80}
+                sizes="100vw"
+                alt="bg-image"
+              />
+            </div>
+          </div>
           <div className=" w-full h-[1px] bg-gray-200"></div>
           <div>
             <ul className=" text-sm flex flex-col p-3">
-              <li className=" flex gap-x-2  hover:bg-slate-100 p-2 rounded-md">
+              <li className=" flex gap-x-2  hover:bg-slate-100 pl-2 py-[8px] rounded-md">
                 <UserRoundPlus size={17} />
                 <span className="">Invite members</span>
               </li>
-              <li className=" flex gap-x-2  hover:bg-slate-100 p-2 rounded-md">
+              <li className=" flex gap-x-2  hover:bg-slate-100 pl-2 py-[8px] rounded-md">
+                <Trash size={17}/>
+                <span>Recently deleted</span>
+              </li>
+              <li className=" flex gap-x-2  hover:bg-slate-100 pl-2 py-[8px] rounded-md">
                 <Download size={17} />
                 <span>Install app</span>
               </li>

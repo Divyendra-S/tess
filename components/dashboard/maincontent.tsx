@@ -71,7 +71,7 @@ const MainContent = () => {
               key={i}
             >
               <div className="text-sm truncate">{item.heading}</div>
-              <div className="text-xs text-[#6F7387] hidden md:block truncate">
+              <div className=" text-tiny text-[#6F7387] hidden md:block truncate">
                 {item.message}
               </div>
             </div>
@@ -87,10 +87,10 @@ const MainContent = () => {
           </button>
         </div>
       </div>
-      <div className=" mt-4 grid md:grid-cols-2 xl:grid-cols-3  gap-4">
+      <div className=" mt-4 grid md:grid-cols-2 xl:grid-cols-3  gap-4 2xl:grid-cols-4">
         {ByMe.map((item, i) => (
           <div key={i} className="flex flex-col">
-            <div className=" aspect-video bg-black  rounded-md overflow-hidden border  relative">
+            <div className=" aspect-video bg-black  rounded-lg overflow-hidden border  relative">
               <Image
                 src={item.img}
                 sizes="100vw"
@@ -102,7 +102,7 @@ const MainContent = () => {
                 className=" "
               />
             </div>
-            <div className=" py-4 text-sm font-medium">
+            <div className=" py-4 text-sm font-semibold">
               <span className=" w-full">{item.title}</span>
               <div className="  text-xs flex items-center  mt-[5px] font-light">
                 <span className=" ">

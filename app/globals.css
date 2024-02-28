@@ -89,3 +89,8 @@
 .dropdown-animation {
   transition: max-height 0.3s ease-in-out;
 }
+
+
+.text-tiny {
+  font-size: 11px; /* Adjust the size as needed */
+}

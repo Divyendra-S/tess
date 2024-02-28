@@ -18,6 +18,13 @@ const config = {
       },
     },
     extend: {
+      screens: {
+        'sm': '640px',
+        'md': '800px',
+        'lg': '1024px',
+        'xl': '1200px',
+        '2xl': '1600px', 
+      },
       fontFamily: {
         fredoka : ['var(--font-fredoka)'],
         lato : ['var(--font-lato)'],
