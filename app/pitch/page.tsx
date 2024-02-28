@@ -1,15 +1,17 @@
 import React from 'react'
 import Sidebar from '@/components/dashboard/sidebar';
+import MainContent from '@/components/dashboard/maincontent';
 
 const Pitch = () => {
   return (
     <>
-    <div className='flex'>
-        <section className='flex flex-col w-1/5 '>
+    <div className='flex w-screen '>
+        <section className=' '>
             <Sidebar/>
         </section>
-        <div className=' h-screen bg-gray-200 w-[1px]'></div>
-        <section></section>
+        <section className=''>
+            <MainContent/>
+        </section>
     </div>
     </>
   )

@@ -74,3 +74,18 @@
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes dropdown {
+  0% { transform: rotateY(-180deg); }
+  100% { transform: rotateY(0deg); }
+}
+
+.animate-dropdown {
+  transition: transform 0.3s ease-in-out;
+}
+.rotate-counterclockwise-90 {
+  transform: rotate(-90deg);
+}
+.dropdown-animation {
+  transition: max-height 0.3s ease-in-out;
+}

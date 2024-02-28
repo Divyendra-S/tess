@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
-import { Inter, Nunito, Fredoka } from "next/font/google";
+import { Inter, Nunito, Fredoka, Lato, Sen} from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 const nunito = Nunito({ subsets: ["latin"] });
 const fredoka = Fredoka({ subsets: ["latin"], weight: ['300','400','500','700'], variable : '--font-fredoka'});
+const lato = Lato({ subsets: ["latin"], weight: ['300','400','100','700','900'], variable : '--font-lato'});
+const sen = Sen({ subsets: ["latin"], weight: ['500','400','600','700','800'], variable : '--font-sen'});
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={fredoka.variable}>{children}</body>
+      <body className={`${lato.variable} ${sen.variable} ${fredoka.variable}`}>{children}</body>
     </html>
   );
 }

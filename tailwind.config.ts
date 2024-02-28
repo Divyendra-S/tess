@@ -20,6 +20,8 @@ const config = {
     extend: {
       fontFamily: {
         fredoka : ['var(--font-fredoka)'],
+        lato : ['var(--font-lato)'],
+        sen : ['var(--font-sen)'],
       },
       colors: {
         border: "hsl(var(--border))",
