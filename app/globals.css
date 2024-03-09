@@ -90,7 +90,15 @@
   transition: max-height 0.3s ease-in-out;
 }
 
+.gradient-border {
+  background: linear-gradient(87deg, #f5f5ff 2.67%, #fcf3fd 97.33%) padding-box,
+              linear-gradient(to right, rgba(45, 58, 247, 0.35), rgba(201, 10, 221, 0.35)) border-box;
+  
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+}
 
 .text-tiny {
   font-size: 11px; /* Adjust the size as needed */
 }
+

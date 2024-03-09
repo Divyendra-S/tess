@@ -29,6 +29,7 @@ const config = {
         fredoka : ['var(--font-fredoka)'],
         lato : ['var(--font-lato)'],
         sen : ['var(--font-sen)'],
+        kanit : ['var(--font-kanit)'],
       },
       colors: {
         border: "hsl(var(--border))",
