@@ -3,6 +3,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import unsplash from "../../public/unsplash.jpeg";
 import unsplash1 from "@/public/unsplash1.jpeg";
+import Link from "next/link";
 
 const MainContent = () => {
   const [toggle, setToggle] = useState();
@@ -91,6 +92,7 @@ const MainContent = () => {
         {ByMe.map((item, i) => (
           <div key={i} className="flex flex-col">
             <div className=" aspect-video bg-black  rounded-lg overflow-hidden border  relative">
+              <Link href={'/pitchboard'}>
               <Image
                 src={item.img}
                 sizes="100vw"
@@ -100,7 +102,8 @@ const MainContent = () => {
                 }}
                 alt="placeholder"
                 className=" "
-              />
+              /></Link>
+              
             </div>
             <div className=" py-4 text-sm font-semibold">
               <span className=" w-full">{item.title}</span>

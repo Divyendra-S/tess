@@ -1,11 +1,18 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import { Input } from "../ui/input";
 import { Search } from "lucide-react";
+import { motion } from "framer-motion";
 
 const Dropmedia = () => {
   return (
-    <div className=" w-[684px] font-lato h-[420px] translate-x-[-50%] border translate-y-[-2px] bg-white shadow  rounded-xl text-sm">
+    <motion.div
+      initial={{ y: -10, opacity: 0,x:"-50%" }}
+      animate={{ y: 0, opacity: 1 ,x:"-50%" }}
+      transition={{ type: "spring", stiffness: 500, damping: 22 }}
+      className=" w-[684px] font-lato h-[420px] translate-x-[-50%] left-1/2 border translate-y-[-2px] bg-white shadow  rounded-xl text-sm"
+    >
       <div className=" flex h-full">
         <section className=" w-[204px]   border-r h-full ">
           <div className=" h-[364px] w-full p-3 ">
@@ -90,14 +97,18 @@ const Dropmedia = () => {
                 width={250}
                 alt="empty"
               />
-              <div className="mt-6 text-[#3F4250] ">Upload images to your library so everyone on </div>
+              <div className="mt-6 text-[#3F4250] ">
+                Upload images to your library so everyone on{" "}
+              </div>
               <div>Your team can use them</div>
-              <div className="mt-[6px] text-xs text-[#6B53FF] hover:bg-gray-100 rounded px-[6px] py-1">Go to library</div>
+              <div className="mt-[6px] text-xs text-[#6B53FF] hover:bg-gray-100 rounded px-[6px] py-1">
+                Go to library
+              </div>
             </div>
           </div>
         </section>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

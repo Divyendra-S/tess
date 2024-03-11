@@ -1,16 +1,25 @@
-import React from "react";
+'use client'
+import React , { Dispatch, SetStateAction } from "react";
 import { Minus, ChevronDown } from "lucide-react";
 import Image from "next/image";
 import sideboard from "@/public/sideboard.avif";
 import { Switch } from "@/components/ui/switch"
+import { motion } from "framer-motion";
 
-const DesignSlide = () => {
+
+interface ShareModalProps {
+  setOpenComponent: Dispatch<SetStateAction<number>>;
+}
+
+const DesignSlide = ({setOpenComponent}:ShareModalProps) => {
   return (
-    <div className=" resize-y w-[264px] mr-[8px] mt-1 mb-3 border border-[#F3F4F6] shadow h-[870px] font-lato text-sm rounded-[8px]">
+    <motion.div initial={{ x: 40, opacity: 0 }}
+    animate={{ x: 0, opacity: 1 }}
+    transition={{ duration: 0.1, ease: "easeOut" }} className=" resize-y w-[264px] mr-[8px] mt-1 mb-3 border border-[#F3F4F6] shadow h-[870px] font-lato text-sm rounded-[8px]">
       <div className="flex py-3 pb-4 px-4 justify-between font-kanit h-[49px] font-medium text-lg border-b border-[#F3F4F6] ">
         <span>Slide</span>{" "}
         <span>
-          <Minus />
+          <Minus onClick={()=>setOpenComponent(0)}/>
         </span>{" "}
       </div>
       <div className=" h-[100px] w-full p-4 flex flex-col justify-between border-b border-[#F3F4F6]">
@@ -86,7 +95,7 @@ const DesignSlide = () => {
             <Switch />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
